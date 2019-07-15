@@ -30,6 +30,6 @@ public class DateDifferenceServiceRoute  extends RouteBuilder {
         from("file:data/in?fileName=sample.txt&noop=true").routeId("fileInputRouteId")
             .log(LoggingLevel.INFO, LOG_NAME, "Read file is \n ${body} and headers are \n ${headers}")
             .process(dataProcessor).id("dataProcessorId")
-            .to("file:data/out").id("OutputRouteId");
+            .to("file:data/out").id("FileOutputRouteId");
     }
 }

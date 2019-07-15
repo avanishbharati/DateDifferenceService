@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 
 /***
- * *
+ *
  * Validate date values from string
  */
 public class ValidateDate {
@@ -32,7 +32,6 @@ public class ValidateDate {
         DateProperties validDateProperties = validDateConverter.getValidDateProperties();
         return validDateProperties;
     }
-
 
     private ValidateDate(String dateString) {
         mDateString = dateString;

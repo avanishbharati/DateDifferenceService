@@ -26,6 +26,9 @@ Run command ```spring-boot:run```
 1. place valid file in data/in
 2. see result data/out
 
+# Swagger
+Run locally and go to http://localhost:8080/datevalidationservice/swagger-ui
+
 
 ### Reference Documentation
 * [List of Leap Years](https://kalender-365.de/leap-years.php)
@@ -36,6 +39,7 @@ Run command ```spring-boot:run```
 * [Maven](https://maven.apache.org)
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Using Apache Camel with Spring Boot](https://camel.apache.org/spring-boot)
+* [Swagger](https://swagger.io/)
 
 ## Authors
 * **Avanish Bharati**

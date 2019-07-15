@@ -13,6 +13,7 @@ public final class DateUtils {
     public static Map<Integer,Integer> getLeapFebDays(){
         return FEB_DAYS_LEAP_YEAR;
     }
+
     public static Map<Integer,Integer> getMonthDays(){
         return MONTH_DAYS;
     }
@@ -44,7 +45,6 @@ public final class DateUtils {
         map.put(11,30);
         map.put(12,31);
         return Collections.unmodifiableMap(map);
-
     }
 
     private static Map<Integer,Integer> numberFebDaysLeap(){
