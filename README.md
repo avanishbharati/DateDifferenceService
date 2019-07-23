@@ -1,4 +1,4 @@
-#Integration Using Spring Boot, Apache Camel and RestTemplate
+# Integration service using Spring Boot, Apache Camel and RestTemplate
 
 This project demonstrates how to use Spring Boot, Apache Camel, RestTemplate and date manipulation methods to process data.
 Data is processable using folder location and a RESTful end point.
