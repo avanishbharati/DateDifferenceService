@@ -1,7 +1,7 @@
 package com.avanishbharati.datedifferenceservice.route;
 
-import com.avanishbharati.datedifferenceservice.model.ServiceInput;
-import com.avanishbharati.datedifferenceservice.model.ServiceOutput;
+import com.avanishbharati.datedifferenceservice.model.ServiceRequest;
+import com.avanishbharati.datedifferenceservice.model.ServiceResponse;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.beans.factory.annotation.Value;
@@ -47,10 +47,10 @@ public class RestAPIRoute extends RouteBuilder {
         rest("/datediff").id("date-diff-api").description("Date Difference Service API")
             .post().description("Get days between given dates")
             .consumes("application/json")
-            .type(ServiceInput.class)
+            .type(ServiceRequest.class)
             .produces("application/json")
             .bindingMode(RestBindingMode.json)
-            .outType(ServiceOutput.class)
+            .outType(ServiceResponse.class)
             .to("direct:getDateDiff");
 
     }

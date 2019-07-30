@@ -1,13 +1,9 @@
 package com.avanishbharati.datedifferenceservice.route;
 
-import com.avanishbharati.datedifferenceservice.model.ServiceInput;
-import com.avanishbharati.datedifferenceservice.model.ServiceOutput;
 import com.avanishbharati.datedifferenceservice.processor.DataProcessor;
 import com.avanishbharati.datedifferenceservice.processor.ExceptionProcessor;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.jackson.JacksonDataFormat;
-import org.apache.camel.spi.DataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

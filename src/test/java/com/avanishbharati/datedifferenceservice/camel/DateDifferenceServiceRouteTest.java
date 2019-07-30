@@ -8,6 +8,7 @@ import org.apache.camel.test.junit4.CamelTestSupport;
 import org.apache.camel.test.spring.CamelSpringBootRunner;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -80,6 +81,7 @@ public class DateDifferenceServiceRouteTest extends CamelTestSupport {
             });
     }
 
+    @Ignore
     @Test
     public void routeTest() throws Exception {
 

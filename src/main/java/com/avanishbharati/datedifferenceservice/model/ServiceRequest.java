@@ -1,11 +1,11 @@
 package com.avanishbharati.datedifferenceservice.model;
 
-public class ServiceInput {
+public class ServiceRequest {
 
     private String earliestDate;
     private String latestDate;
 
-    public ServiceInput() {
+    public ServiceRequest() {
     }
 
     public String getEarliestDate() {
@@ -26,7 +26,7 @@ public class ServiceInput {
 
     @Override
     public String toString() {
-        return "ServiceOutput{" +
+        return "ServiceResponse{" +
             ", earliestDate='" + earliestDate + '\'' +
             ", latestDate='" + latestDate + '\'' +
             '}';

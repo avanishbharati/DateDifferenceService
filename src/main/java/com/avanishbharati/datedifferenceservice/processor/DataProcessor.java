@@ -1,8 +1,8 @@
 package com.avanishbharati.datedifferenceservice.processor;
 
 import com.avanishbharati.datedifferenceservice.exception.ConvertDataException;
-import com.avanishbharati.datedifferenceservice.model.ServiceInput;
-import com.avanishbharati.datedifferenceservice.model.ServiceOutput;
+import com.avanishbharati.datedifferenceservice.model.ServiceRequest;
+import com.avanishbharati.datedifferenceservice.model.ServiceResponse;
 import com.avanishbharati.datedifferenceservice.service.DateDifferenceCalculator;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -42,12 +42,12 @@ public class DataProcessor implements Processor {
 
 
         if ("TRUE".equals(exchange.getProperty("restRoute"))){
-            if (exchange.getIn().getBody().getClass().equals(ServiceInput.class)) {
+            if (exchange.getIn().getBody().getClass().equals(ServiceRequest.class)) {
 
-                ServiceInput serviceInput = exchange.getIn().getBody(ServiceInput.class);
-                ServiceOutput serviceOutput = processDataValues(serviceInput.getEarliestDate(), serviceInput.getLatestDate());
+                ServiceRequest serviceRequest = exchange.getIn().getBody(ServiceRequest.class);
+                ServiceResponse serviceResponse = processDataValues(serviceRequest.getEarliestDate(), serviceRequest.getLatestDate());
 
-                exchange.getIn().setBody(serviceOutput);
+                exchange.getIn().setBody(serviceResponse);
 
             } else {
                 LOGGER.error("Invalid request");
@@ -96,24 +96,24 @@ public class DataProcessor implements Processor {
         LOGGER.info("DataProcessor::process() - END");
     }
 
-    private String transform(ServiceOutput serviceOutput) {
-        return serviceOutput.getEarliestDate() + ", " + serviceOutput.getLatestDate() + ", " + serviceOutput.getDifference();
+    private String transform(ServiceResponse serviceResponse) {
+        return serviceResponse.getEarliestDate() + ", " + serviceResponse.getLatestDate() + ", " + serviceResponse.getDifference();
     }
 
-    private ServiceOutput processDataValues(String earliestDate, String latestDate) throws ConvertDataException {
+    private ServiceResponse processDataValues(String earliestDate, String latestDate) throws ConvertDataException {
 
         LOGGER.info("earliestDate : {}, latestDate : {}", earliestDate, latestDate);
 
         int dateDifference = DateDifferenceCalculator.dateDifference(earliestDate, latestDate);
 
-        ServiceOutput serviceOutput = new ServiceOutput();
-        serviceOutput.setDifference(dateDifference);
-        serviceOutput.setEarliestDate(earliestDate);
-        serviceOutput.setLatestDate(latestDate);
+        ServiceResponse serviceResponse = new ServiceResponse();
+        serviceResponse.setDifference(dateDifference);
+        serviceResponse.setEarliestDate(earliestDate);
+        serviceResponse.setLatestDate(latestDate);
 
-        LOGGER.info("processDataValues : {}", serviceOutput);
+        LOGGER.info("processDataValues : {}", serviceResponse);
 
-        return serviceOutput;
+        return serviceResponse;
     }
 
     private void setBreadcrumbID(String breadcrumbID){
