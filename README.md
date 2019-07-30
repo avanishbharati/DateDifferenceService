@@ -1,6 +1,7 @@
-# Getting Started
+# Integration service using Spring Boot, Apache Camel and RestTemplate
 
-This project demonstrates how to use Apache Camel and date manipulation methods to process data.
+This project demonstrates how to use Spring Boot, Apache Camel, RestTemplate and date manipulation methods to process data.
+Data is processable using folder location and a RESTful end point.
 The emphasis is put on using Non-SDK techniques to get the number of days between the two given date values.
 For future development, data could be retrieved/transported async using ActiveMq.
 
